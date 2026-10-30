@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Siteix UI — минимальный UI-кит</title>
+    <meta name="description" content="Небольшой CSS UI-кит: токены, кнопки, формы, карточки и адаптивная сетка." />
+    <link rel="stylesheet" href="siteix-ui.css" />
+    <style>
+      .demo-head { padding: 42px 0 22px; }
+      .demo-head .sx-title { max-width: 760px; }
+      .demo-block { margin-top: 20px; }
+      .demo-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+      .swatches { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; }
+      .swatch { padding: 14px; border-radius: 12px; background: var(--sx-surface); border: 1px solid var(--sx-line); }
+      .swatch i { display: block; height: 52px; margin-bottom: 9px; border-radius: 8px; }
+      .swatch code { font-size: 12px; }
+    </style>
+  </head>
+  <body>
+    <header class="sx-container demo-head">
+      <p class="sx-kicker">Siteix UI · v0.1</p>
+      <h1 class="sx-title">Маленький UI-кит для лендингов</h1>
+      <p class="sx-lead">Токены, кнопки, формы, карточки, бейджи и адаптивная сетка. Без сборщика и зависимостей: один CSS-файл.</p>
+      <div class="demo-row" style="margin-top: 22px">
+        <a class="sx-btn sx-btn--primary" href="https://github.com/siteix-ru/siteix-ui">GitHub</a>
+        <a class="sx-btn sx-btn--ghost" href="#components">Компоненты</a>
+      </div>
+    </header>
+
+    <main class="sx-container" id="components">
+      <section class="sx-section">
+        <p class="sx-kicker">Токены</p>
+        <h2 class="sx-title" style="font-size: 32px">Цвета и радиусы</h2>
+        <div class="swatches demo-block">
+          <div class="swatch"><i style="background:#173e30"></i><code>--sx-green</code></div>
+          <div class="swatch"><i style="background:#c4673f"></i><code>--sx-copper</code></div>
+          <div class="swatch"><i style="background:#f7f2e8"></i><code>--sx-paper</code></div>
+          <div class="swatch"><i style="background:#56635b"></i><code>--sx-muted</code></div>
+        </div>
+      </section>
+
+      <section class="sx-section">
+        <p class="sx-kicker">Действия</p>
+        <h2 class="sx-title" style="font-size: 32px">Кнопки и бейджи</h2>
+        <div class="demo-row demo-block">
+          <button class="sx-btn sx-btn--primary" type="button">Основная</button>
+          <button class="sx-btn sx-btn--copper" type="button">Акцентная</button>
+          <button class="sx-btn sx-btn--ghost" type="button">Второстепенная</button>
+          <span class="sx-badge">SEO</span>
+          <span class="sx-badge sx-badge--copper">Срочно</span>
+        </div>
+      </section>
+
+      <section class="sx-section">
+        <p class="sx-kicker">Компоненты</p>
+        <h2 class="sx-title" style="font-size: 32px">Карточки и форма</h2>
+        <div class="sx-grid demo-block">
+          <article class="sx-card">
+            <span class="sx-badge">Сайт</span>
+            <h3 class="sx-card__title" style="margin-top: 14px">Лендинг</h3>
+            <p class="sx-card__text">Одна страница, понятный оффер и форма заявки.</p>
+          </article>
+          <article class="sx-card">
+            <span class="sx-badge sx-badge--copper">Поддержка</span>
+            <h3 class="sx-card__title" style="margin-top: 14px">Сопровождение</h3>
+            <p class="sx-card__text">Мониторинг, бэкапы и пакет часов на правки.</p>
+          </article>
+          <article class="sx-card">
+            <span class="sx-badge">Аудит</span>
+            <h3 class="sx-card__title" style="margin-top: 14px">Проверка</h3>
+            <p class="sx-card__text">Короткий отчёт о технических и конверсионных ошибках.</p>
+          </article>
+        </div>
+
+        <form class="sx-card demo-block" onsubmit="event.preventDefault();" style="max-width: 560px">
+          <h3 class="sx-card__title">Оставить заявку</h3>
+          <div class="sx-stack" style="--sx-gap: 14px">
+            <label class="sx-field"><span>Имя</span><input class="sx-input" name="name" autocomplete="name" /></label>
+            <label class="sx-field"><span>Телефон</span><input class="sx-input" name="phone" type="tel" autocomplete="tel" /></label>
+            <label class="sx-field"><span>Задача</span><textarea class="sx-textarea" name="message"></textarea></label>
+            <label class="sx-check"><input type="checkbox" /> Согласен с обработкой персональных данных</label>
+            <button class="sx-btn sx-btn--copper sx-btn--block" type="submit">Отправить</button>
+            <p class="sx-muted" style="margin: 0; font-size: 12px">Демо-форма: подключите свой API.</p>
+          </div>
+        </form>
+      </section>
+
+      <section class="sx-section">
+        <div class="sx-alert">Успешное состояние или подсказка.</div>
+        <div class="sx-alert sx-alert--error" style="margin-top: 10px">Ошибка отправки — попробуйте ещё раз.</div>
+      </section>
+    </main>
+
+    <footer class="sx-container sx-section sx-muted" style="font-size: 13px">
+      Siteix UI · MIT · <a href="https://github.com/siteix-ru/siteix-ui">исходники</a>
+    </footer>
+  </body>
+</html>
